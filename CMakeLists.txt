@@ -3,4 +3,4 @@ project(mephi_lab_5)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(mephi_lab_5 main.cpp Heap.hpp Comporators.hpp Iterator.hpp Person.hpp SortedSequence.hpp)
+add_executable(mephi_lab_5 main.cpp Heap.hpp Comporators.hpp Iterator.hpp Person.hpp SortedSequence.hpp tests.hpp)

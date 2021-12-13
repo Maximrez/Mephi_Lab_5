@@ -2,12 +2,13 @@
 #include "Comporators.hpp"
 #include "Person.hpp"
 #include "SortedSequence.hpp"
+#include "tests.hpp"
 
 using namespace std;
 
 int main() {
     int s1 = 0;
-    cout << endl << "Select an action:" << endl << "1 - create sequence" << endl << "2 - read from file" << endl;
+    cout << endl << "Select an action:" << endl << "1 - create sequence" << endl << "2 - read from file" << endl << "3 - run tests" << endl;
     cin >> s1;
     switch (s1) {
         case 1: {
@@ -43,7 +44,7 @@ int main() {
                         putInTXT(seq.getValues(), R"(D:\CLionProjects\mephi_lab_5\output.txt)");
                         break;
                     }
-                    case 6: {
+                    default: {
                         break;
                     }
                 }
@@ -54,6 +55,23 @@ int main() {
             auto ps = getFromTXT(R"(D:\CLionProjects\mephi_lab_5\input.txt)");
             SortedSequence<Person> seq(ps, PersonLess);
             putInTXT(seq.getValues(), R"(D:\CLionProjects\mephi_lab_5\output.txt)");
+            break;
+        }
+        case 3 : {
+            test_less();
+            test_greater();
+            test_person_less();
+            test_person_greater();
+            test_person_equal();
+            test_sequence_add_get();
+            test_sequence_create();
+            test_sequence_remove();
+            test_sequence_search();
+
+            cout << "All test passed!" << endl;
+            break;
+        }
+        default : {
             break;
         }
     }
